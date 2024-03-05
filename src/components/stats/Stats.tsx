@@ -43,7 +43,7 @@ const Stats: React.FC<Props> = ({ todos }) => {
           <div className="score-percent">
             {Math.floor(
               (todos.filter((todo) => todo.status).length / todos.length) * 100
-            )}
+            ) || '0'}
             % done
           </div>
         </div>

@@ -53,14 +53,9 @@ const TaskCreator: React.FC<Props> = ({ isOpened, setIsOpened }) => {
         <div className="void"></div>
       </div>
       <form className="task-form">
-        <input type="text" className="name" placeholder="Name" ref={nameRef} />
-        <input
-          type="text"
-          className="place"
-          placeholder="Place"
-          ref={placeRef}
-        />
-        <input type="text" className="time" placeholder="Time" ref={timeRef} />
+        <input type="text" placeholder="Name" ref={nameRef} />
+        <input type="text" placeholder="Place" ref={placeRef} />
+        <input type="text" placeholder="Time" ref={timeRef} />
         <div className="submit" onClick={(): void => hadleAdd()}>
           Add your todo
         </div>
