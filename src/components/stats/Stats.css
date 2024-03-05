@@ -1,0 +1,55 @@
+.status {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+  bottom: 0;
+  padding: 0 25px;
+
+  display: flex;
+  justify-content: space-between;
+}
+.bg {
+  position: absolute;
+  width: 65%;
+  height: 100%;
+  background: rgb(0, 0, 0, 0.3);
+  transition: 0.3s all ease;
+}
+.left-side,
+.right-side {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.stats-title {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+.date {
+  color: #d5d5d5;
+}
+.right-side {
+  align-items: flex-end;
+}
+
+.score {
+  display: flex;
+  gap: 10px;
+}
+.score > div div:first-child {
+  color: #fff;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+.score > div div:last-child {
+  color: #d5d5d5;
+}
+.score-percent {
+  color: #d5d5d5;
+}

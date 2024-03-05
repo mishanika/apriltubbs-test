@@ -1,0 +1,23 @@
+.filter {
+  display: flex;
+
+  gap: 15px;
+
+  font-size: 1rem;
+  font-weight: 500;
+}
+.active {
+  background: #cedcea;
+  color: #000;
+}
+.filter > div {
+  padding: 0 5px;
+  border: 1px solid #8a92c3;
+  border-radius: 5px;
+  transition: 0.3s all ease;
+  cursor: pointer;
+}
+.filter > div:hover {
+  background: #cedcea;
+  color: #000;
+}

@@ -1,0 +1,31 @@
+.task {
+  width: 100%;
+  padding: 5px 10px;
+  background: #cedcea;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: 0.3s all ease;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.task:hover {
+  border: 2px solid #253dd6;
+}
+.completed {
+  border: 2px solid #253dd6;
+}
+.uncompleted {
+  border: 2px solid #9828e2;
+}
+
+.name {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.place,
+.time {
+  color: #5d5d5d;
+}

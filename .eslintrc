@@ -2,7 +2,10 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
-  "extends": ["airbnb-typescript", "plugin:prettier/recommended"],
+  "extends": [
+    "@wemake-services/typescript/recommended",
+    "plugin:prettier/recommended"
+  ],
   "env": {
     "jest": true
   },
