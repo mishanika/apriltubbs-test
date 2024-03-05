@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useAppDispatch } from '../../app/hooks'
 import { addTodo } from '../../features/todos/todosSlice'
 import './TaskCreator.css'
@@ -10,9 +10,11 @@ type Props = {
 
 const TaskCreator: React.FC<Props> = ({ isOpened, setIsOpened }) => {
   const dispatch = useAppDispatch()
+  const taskCreatorRef = useRef<HTMLInputElement>(null)
   const nameRef = useRef<HTMLInputElement>(null)
   const placeRef = useRef<HTMLInputElement>(null)
   const timeRef = useRef<HTMLInputElement>(null)
+  const [initialLoad, setInitialLoad] = useState(true)
 
   const hadleAdd = (): void => {
     if (nameRef.current && placeRef.current && timeRef.current) {
@@ -44,8 +46,25 @@ const TaskCreator: React.FC<Props> = ({ isOpened, setIsOpened }) => {
       timeRef.current.value = ''
     }
   }
+
+  useEffect(() => {
+    if (initialLoad) {
+      setTimeout(() => setInitialLoad(false), 500)
+    }
+
+    if (taskCreatorRef.current) {
+      taskCreatorRef.current.classList.toggle('opened')
+    }
+  }, [isOpened])
+
+  useEffect(() => {
+    if (!initialLoad && taskCreatorRef.current) {
+      taskCreatorRef.current.style.display = 'flex'
+    }
+  }, [isOpened])
+
   return (
-    <div className={`task-creator ${isOpened ? 'opened' : ''}`}>
+    <div className={`task-creator opened`} ref={taskCreatorRef}>
       <div className="task-creator-header">
         {' '}
         <div className="back" onClick={(): void => setIsOpened(false)}></div>
